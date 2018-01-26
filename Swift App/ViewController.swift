@@ -17,9 +17,15 @@ class ViewController: UIViewController {
     
     var tapCount = 0
     var birthYear = 1800
+    var addition = true
     
     @IBAction func buttonTapped(_ sender: Any) {
-        theLabel.text = "Answer is... \(Double(text1.text!)! + Double(text2.text!)!)"
+        
+        if addition {
+            theLabel.text = "Answer is... \(Double(text1.text!)! + Double(text2.text!)!)"
+        } else {
+            theLabel.text = "Answer is... \(Double(text1.text!)! - Double(text2.text!)!)"
+        }
         tapCount = tapCount + 1
         print("Button tapped", tapCount, "times!")
         print(text1.text!)
@@ -31,6 +37,8 @@ class ViewController: UIViewController {
     }
     @IBAction func Button2(_ sender: Any) {
         theLabel.text = "Buttons are cool!"
+        addition = !addition
+        
         if birthYear >= 2000 {
             print ("You were born in the 21st Century")
         }
