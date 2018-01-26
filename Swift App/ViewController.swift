@@ -19,7 +19,7 @@ class ViewController: UIViewController {
     var birthYear = 1800
     
     @IBAction func buttonTapped(_ sender: Any) {
-        theLabel.text = "Hello there!"
+        theLabel.text = "Answer is... \(Double(text1.text!)! + Double(text2.text!)!)"
         tapCount = tapCount + 1
         print("Button tapped", tapCount, "times!")
         print(text1.text!)
